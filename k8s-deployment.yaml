@@ -21,4 +21,24 @@ spec:
         ports:
         - containerPort: 3000
       imagePullSecrets:
-      - name: gitlab-insider-labs
+      - name: gitlab-insiderlabs-app
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: insiderlabs-app
+  namespace: insider-labs
+  resourceVersion: "751199"
+  uid: 376d489d-e11e-4351-9efa-8bf347ae4d8c
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - kind: Rule
+    match: Host(`insiderlabs-app.alpha.n-marketing.io`)
+    passHostHeader: false
+    services:
+    - name: insiderlabs-app
+      port: 3000
+  tls:
+    certResolver: default
