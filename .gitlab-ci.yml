@@ -39,10 +39,18 @@ publish:
 deploy:
   stage: deploy
   script:
-    - echo "No Deployment configured yet"
+    - kubectl config set-cluster insider-labs-dev --server="$KUBE_URL_DEV" --insecure-skip-tls-verify=true
+    - kubectl config set-credentials $KUBE_API_USER_DEV --token=$KUBE_API_TOKEN_DEV
+    - kubectl config set-context insider-labs-dev --cluster insider-labs-dev --namespace=insider-labs --user $KUBE_API_USER_DEV
+    - kubectl config use-context insider-labs-dev
+    - kubectl config current-context
+    - kubectl config view
+    - kubectl set image deployment/insiderlabs-app insiderlabs-app=$IMAGE_TAG_API
+    - kubectl rollout status deployment.v1.apps/insiderlabs-app
   only:
     - develop
     - master
+
 
 clean:
   stage: clean
