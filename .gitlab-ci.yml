@@ -6,7 +6,6 @@ services:
 variables:
   DOCKER_DRIVER: overlay2
   IMAGE_TAG_APP: $CI_REGISTRY_IMAGE:app-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
-  IMAGE_TAG_FRONT: $CI_REGISTRY_IMAGE:front-$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
   
 before_script:
   - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
@@ -39,13 +38,13 @@ publish:
 deploy:
   stage: deploy
   script:
-    - kubectl config set-cluster iinsiderlabs-app-dev --server="$KUBE_URL_DEV" --insecure-skip-tls-verify=true
+    - kubectl config set-cluster insiderlabs-app-dev --server="$KUBE_URL_DEV" --insecure-skip-tls-verify=true
     - kubectl config set-credentials $KUBE_API_USER_DEV --token=$KUBE_API_TOKEN_DEV
-    - kubectl config set-context iinsiderlabs-app-dev --cluster iinsiderlabs-app-dev --namespace=insider-labs --user $KUBE_API_USER_DEV
-    - kubectl config use-context iinsiderlabs-app-dev
+    - kubectl config set-context insiderlabs-app-dev --cluster insiderlabs-app-dev --namespace=insider-labs --user $KUBE_API_USER_DEV
+    - kubectl config use-context insiderlabs-app-dev
     - kubectl config current-context
     - kubectl config view
-    - kubectl set image deployment/insiderlabs-app insiderlabs-app=$IMAGE_TAG_API
+    - kubectl set image deployment/insiderlabs-app insiderlabs-app=$IMAGE_TAG_APP
     - kubectl rollout status deployment.v1.apps/insiderlabs-app
   only:
     - develop
