@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# il
+
+
+This project was generated with [superplate](https://github.com/pankod/superplate).
 
 ## Getting Started
 
-First, run the development server:
+superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
+
+## Available Scripts
+
+### Running the development server.
 
 ```bash
-npm run dev
-# or
-yarn dev
+    yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Building for production.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+    yarn build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Running the production server.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+    yarn start
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### **TailwindCSS**
 
-## Deploy on Vercel
+A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Go To Documentation](https://tailwindcss.com/docs)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### **SASS/SCSS**
+
+Sass is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax.
+
+[Go To Documentation](https://sass-lang.com/documentation)
+
+
+### **React Redux**
+
+Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+
+[Go To Documentation](https://redux.js.org/introduction/getting-started)
+
+
+### **ESLint**
+
+A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.
+
+[Go To Documentation](https://eslint.org/docs/user-guide/getting-started)
+
+
+### **Prettier**
+
+An opinionated code formatter; Supports many languages; Integrates with most editors.
+
+[Go To Documentation](https://prettier.io/docs/en/index.html)
+
+
+
+## License
+
+MIT

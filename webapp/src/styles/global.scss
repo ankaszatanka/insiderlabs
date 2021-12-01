@@ -1,0 +1,171 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #272730;
+  font-family: 'Grotesk';
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer utilities {
+  .w-180px {
+    width: 180px;
+  }
+  .w-500px {
+    width: 500px;
+  }
+  .w-400px {
+    width: 400px;
+  }
+
+  .w-340px {
+    width: 340px;
+  }
+
+  .maxW-830px {
+    width: 830px;
+  }
+  .minW-250px {
+    min-width: 250px;
+  }
+  .minW-200px {
+    min-width: 200px;
+  }
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Black.ttf') format('ttf');
+  font-weight: bolder;
+  font-style: bolder;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-ExtraLight.ttf') format('ttf');
+  font-weight: lighter;
+  font-style: lighter;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Light.ttf') format('ttf');
+  font-weight: light;
+  font-style: light;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Medium.ttf') format('ttf');
+  font-weight: medium;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('ttf');
+  font-weight: regular;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: 'Grotesk';
+  src: url('/public/assets/fonts/hk-grotesk.bold.ttf') format('ttf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Grotesk';
+  src: url('/public/assets/fonts/hk-grotesk.light.ttf') format('ttf');
+  font-weight: light;
+  font-style: light;
+}
+
+@font-face {
+  font-family: 'Grotesk';
+  src: url('/public/assets/fonts/hk-grotesk.medium.ttf') format('ttf');
+  font-weight: medium;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'Grotesk';
+  src: url('/public/assets/fonts/hk-grotesk.regular.ttf') format('ttf');
+  font-weight: regular;
+  font-style: regular;
+}
+
+body {
+  background: #272730;
+}
+
+.main {
+  padding: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Poppins';
+  position: relative;
+  background-color: #000000;
+  background-image: url('/assets/images/mainBG--small.png');
+  min-width: 350px;
+}
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 21, 25, 0.74);
+  z-index: 1;
+}
+
+@media only screen and (min-width: 640px) {
+  .main {
+    padding: 123px;
+    background-image: url('/assets/images/mainBG--medium.png');
+  }
+
+  .main::before {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main {
+    background-image: url('/assets/images/mainBG--desktop.png');
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .main {
+    background-image: url('/assets/images/mainBG--large.png');
+  }
+}
+
+.main_section {
+  max-width: 410px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  min-width: 450px;
+}
